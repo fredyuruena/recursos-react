@@ -2,15 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import UserCard from './components/UserCard'
-function App() {
-  const [count, setCount] = useState(0)
+import React from "react";
+import Header from "./components/header.jsx";
+import Listas from "./components/listas.jsx";
+import "./index.css";
 
+function App() {
   return (
     <>
-      <UserCard></UserCard>
+      <Header />
+      <Listas />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+
