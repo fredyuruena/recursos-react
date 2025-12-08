@@ -12,7 +12,7 @@ function items({ task, onDelete, onEdit }) {
   return (
     <li
       style={{
-        background: "#2c2c2c",
+        background: "#2c2c2c", // Gris oscuro
         padding: "12px 16px",
         marginBottom: "10px",
         borderRadius: "8px",
@@ -42,7 +42,7 @@ function items({ task, onDelete, onEdit }) {
           <button
             onClick={handleSave}
             style={{
-              background: "#4caf50",
+              background: "#4caf50", // Verde
               color: "white",
               border: "none",
               padding: "6px 12px",
@@ -60,7 +60,7 @@ function items({ task, onDelete, onEdit }) {
           <button
             onClick={() => setEditing(true)}
             style={{
-              background: "#2196f3",
+              background: "#2196f3", // Azul
               color: "white",
               border: "none",
               padding: "6px 12px",
@@ -75,7 +75,7 @@ function items({ task, onDelete, onEdit }) {
           <button
             onClick={() => onDelete(task.id)}
             style={{
-              background: "#ff5555",
+              background: "#ff5555", // Rojo
               color: "white",
               border: "none",
               padding: "6px 12px",

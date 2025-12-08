@@ -42,7 +42,7 @@ function listas() {
         <button
   onClick={addTask}
   style={{
-    background: "#4caf50",   // verde
+    background: "#4caf50",   // verdesito
     color: "white",
     border: "none",
     padding: "6px 12px",

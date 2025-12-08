@@ -9,12 +9,14 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (email === "fredy.uruena@ene8.com.mx" && password === "123456") {
-      const fakeToken = "123abc.token.falso";
+    if (email === "fredy.durango@ene8.com.mx" && password === "123456") {
 
-      localStorage.setItem("token", fakeToken);
+      // Guardamos el acceso
+      localStorage.setItem("auth", "true");
 
-      navigate("/");
+      // Enviamos a la página 1 (To-Do List)
+      navigate("/pagina1");
+
     } else {
       alert("Credenciales incorrectas");
     }

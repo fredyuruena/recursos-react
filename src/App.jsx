@@ -9,33 +9,63 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login.jsx";
 import ProtectedRoute from "./protectedRoute.jsx";
+import PaginaDos from "./components/paginaDos.jsx";
+import PublicRoute from "./publicRoute.jsx";
+import Landing from './components/landing.jsx';
 
 function App() {
+  const isLogged = localStorage.getItem("auth") === "true";
+
   return (
     <>
-    <>
-      <Routes>
-        {/* RUTA PÚBLICA */}
-        <Route path="/login" element={<Login />} />
+      {/*solo si login activoo*/}
+      {isLogged && <Header />}
 
-        {/*  RUTAS PROTEGIDAS */}
+      <Routes>
+
+        {/* Publica*/}
         <Route
           path="/"
           element={
+            <PublicRoute>
+              <Landing />
+            </PublicRoute>
+          }
+        />
+
+        {/* Publica*/}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+
+        {/*privada */}
+        <Route
+          path="/pagina1"
+          element={
             <ProtectedRoute>
-              <>
-                <Header />
-                <Listas />
-              </>
+              <Listas />
             </ProtectedRoute>
           }
         />
+
+        {/* privada*/}
+        <Route
+          path="/pagina2"
+          element={
+            <ProtectedRoute>
+              <PaginaDos />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
-    </>
     </>
   );
 }
 
 export default App;
-
-
